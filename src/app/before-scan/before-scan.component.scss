@@ -1,0 +1,48 @@
+.icons-wrapper{
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .icon-item{
+        position: relative;
+        width: 37vw;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 13px;
+        background-color: #F6F9FB;
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+        img{
+            max-width: 100%;
+            position: relative;
+            display: inline-flex;
+        }
+        .icon-description{
+            text-align: center;
+        }
+        .is-scanned-bar{
+            position: absolute;
+            bottom: 0;
+            width: 72.5%;
+            height: 5px;
+            background-color: #BCBCBC;
+            &.active{
+                background-color: #00CACA;
+            }
+        }
+    }
+}
+
+.render-img{
+    max-width: 100%;
+    width: 90vw;
+}
+
+.shops-list {
+    position: relative;
+    width: 100%;
+    text-align: left;
+}

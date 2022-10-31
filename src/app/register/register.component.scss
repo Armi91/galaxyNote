@@ -1,0 +1,88 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .field{
+        position: relative;
+        width: 100%;
+        border: 1px solid #00CACA;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F6F9FB;
+        border-radius: 5px;
+        input{
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            font-size: 1rem;
+            padding: 1.5rem 1rem 1rem;
+            // transform: translateY(5px);
+        }
+        label{
+            position: absolute;
+            left: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            color: #00CACA;
+        }
+        input:focus {
+            outline: none;
+            background: transparent;
+        }
+        input.translated + label, input:focus + label {
+            font-size: 0.75rem;
+            transform: translateY(-0.9rem);
+        }
+    }
+}
+
+.agreement-wrapper{
+    margin-left: 3rem;
+}
+
+label[for="agreement"]{
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+.field-checkbox{
+    position: relative;
+    margin-bottom: 2rem;
+    input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .checkbox-custom{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 32px;
+        width: 32px;
+        background-color: #F6F9FB;
+        border: 1px solid #00CACA;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .tick{
+            display: none;
+            position: relative;
+            width: 24px;
+            height: 24px;
+        }
+        &.checked{
+            .tick {
+                display: block;
+            }
+        }
+    }
+}
+
+.star-note {
+    font-size: 0.8rem;
+}

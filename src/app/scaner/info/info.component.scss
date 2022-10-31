@@ -1,0 +1,27 @@
+.back-button{
+    width: 32px;
+    height: 32px;
+    margin-top: 16px;
+}
+
+.qr-image{
+    max-width: 50%;
+}
+
+.render{
+    padding-left: 0;
+    img{
+        left: -5px;
+    }
+}
+
+.info-title{
+    padding: 0.5rem 2rem;
+    height: 50px;
+    font-size: 1.5rem;
+    line-height: 42px;
+    font-weight: normal;
+    background-color: #F6F9FB;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+}

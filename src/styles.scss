@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import './assets/fonts/fonts.scss';
+
+$light-font-color: #F8FAFC;
+$button-color: #00CACA;
+
+@mixin bg-gradient() {
+    background: #ffffff;
+    background: -moz-linear-gradient(10deg,  #ffffff 0%, #dbe6f1 100%);
+    background: -webkit-linear-gradient(10deg,  #ffffff 0%,#dbe6f1 100%);
+    background: linear-gradient(10deg,  #ffffff 0%,#dbe6f1 100%);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+html {
+    font-family: 'SamsungOne';
+    font-size: 16px;
+    min-height: 100vh;
+    @include bg-gradient();
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SamsungSharpSans';
+    font-weight: bold;
+    margin: 0.3em;
+    line-height: 1;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    img{
+        max-width: 34vw;
+        max-height: calc(34vw * 0.147);
+    }
+}
+
+.button {
+    font-family: 'SamsungSharpSans';
+    font-weight: 500;
+    font-size: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: $light-font-color;
+    background-color: $button-color;
+    width: 280px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 28px;
+    cursor: pointer;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+    &.disabled {
+        background-color: rgb(95, 105, 105);
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+.min-vh-100{
+    min-height: 100vh;
+}
+
+.min-vh-90{
+    min-height: 90vh;
+}
+
+.link{
+    color: #00CACA;
+}

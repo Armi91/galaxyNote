@@ -1,0 +1,57 @@
+<div class="container d-flex flex-column justify-content-between min-vh-100">
+    <div class="row">
+        <div class="col-12">
+            <div class="logo">
+                <img src="../../assets/images/samsung.png" alt="">
+            </div>
+        </div>
+        <div class="col-12 mt-5" *ngIf="!isLogin">
+            <h4 class="text-align-center mb-4">Zarejestruj się, aby wziąć udział.</h4>
+        </div>
+        <div class="col-12" *ngIf="!isLogin">
+            <div class="form">
+                <div class="field">
+                    <input type="text" id="name" name="name" [(ngModel)]="form.name" [ngClass]="{'translated': form.name}" required>
+                    <label for="name">Imię</label>
+                </div>
+                <div class="field">
+                    <input type="text" id="lastname" name="lastname" [(ngModel)]="form.lastname" [ngClass]="{'translated': form.lastname}" required>
+                    <label for="lastname">Nazwisko</label>
+                </div>
+                <div class="field">
+                    <input type="email" id="email" name="email" [(ngModel)]="form.email" [ngClass]="{'translated': form.email}" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="field-checkbox">
+                    <input type="checkbox" name="agreement" id="agreement" [(ngModel)]="form.agreement" required>
+                    <span class="checkbox-custom" [ngClass]="{'checked': form.agreement}" (click)="onCheckClick()"><img src="assets/images/tick.svg" class="tick" alt=""></span>
+                    <div class="agreement-wrapper">
+                        <label class="agreement" for="agreement">Administratorem danych osobowych uczestnika promocji jest Samsung Electronics Polska. Dane będą przetwarzane tylko w związku z udziałem w promocji. Potwierdzam zapoznanie się z informacją o tym, jak <a class="link" href="assets/documents/konkursy_i_promocje.pdf" download>Samsung przetwarza moje dane osobowe.</a></label>
+                    </div>
+                </div>
+                <p *ngIf="errors.missingData">Proszę wypełnić wszystkie pola i wyrazić zgodę na przetwarzanie danych</p>
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center mt-3 mb-3" *ngIf="!isLogin">
+            <button class="button mb-4" type="submit" (click)="onRegister()">Zarejestruj się</button>
+            <span class="is-registered text-align-center">Masz już konto? <span class="clickable link" (click)="changeToLogin($event)">Zaloguj się</span><br><span class="text-align-left star-note">* Jedna rejestracja uprawnia do odbioru jednego upominku.</span></span>
+        </div>
+        <div class="col-12" *ngIf="isLogin">
+            <div class="form mt-5">
+                <div class="field">
+                    <input type="email" id="loginEmail" [ngClass]="{'translated': loginEmail}" name="loginEmail" [(ngModel)]="loginEmail">
+                    <label for="loginEmail">Email</label>
+                </div>
+                <p class="error" *ngIf="errors.invalidEmail">Wprowadzono niepoprawny adres email</p>
+            </div>
+            
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center mt-3 mb-3" *ngIf="isLogin">
+            <button class="button" type="button" (click)="login()">Zaloguj</button>
+            <span class="is-registered">Nie masz konta? <span class="clickable link" (click)="changeToLogin($event, 'register')">Zarejestruj się</span></span>
+        </div>
+    </div>
+    <div class="row d-block">
+        <img src="../../assets/images/render-register.png" alt="">
+    </div>
+</div>

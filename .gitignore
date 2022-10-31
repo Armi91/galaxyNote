@@ -44,3 +44,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# functions
+/functions
+
+# public
+/public
+
+/e2e

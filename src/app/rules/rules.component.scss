@@ -1,0 +1,29 @@
+.background-image {
+    position: relative;
+    padding: 0;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.rules {
+    // text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .point {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1D1D1B;
+        border-radius: 50%;
+        color: #F7FAFC;
+        font-size: 1rem;
+        font-weight: bold;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+    }
+}

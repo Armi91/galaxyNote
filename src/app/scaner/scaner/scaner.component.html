@@ -1,0 +1,25 @@
+<canvas class="main-canvas" #canvasElement></canvas>
+<p *ngIf="displayError">W celu poprawnego działania aplikacji musisz udzielić przeglądarce dostępu do kamery</p>
+
+<div class="container-fluid scanned" *ngIf="scanned">
+    <div class="row">
+        <div class="col-12">
+            <div class="logo">
+                <img src="../../assets/images/samsung.png" alt="">
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-column justify-content-around align-items-center min-vh-90">
+            <h3 class="text-align-center">Gratulacje!</h3>
+            <ng-container *ngIf="pointsLeft !== 0">
+                <p>Pozostał{{ pointsLeft > 1 ? 'y' : '' }} Ci jeszcze {{ pointsLeft }} kod{{ pointsLeft > 1 ? 'y' : '' }} do odebrania upominku. Szukaj dalej!</p>
+                <img class="render render-multi align-self-end" src="../../assets/images/render-after-scan.png" alt="">
+                <a class="button" [routerLink]="[ '/main' ]">Zbieraj dalej</a>
+            </ng-container>
+            <!-- <ng-template #elseTemplate>
+                <p>Możesz już odebrać swój upominek. Dziękujemy za udział w&nbsp;zabawie!</p>
+                <img class="render render-back align-self-end" src="../../assets/images/render-thanks.png" alt="">
+                <a class="button" [routerLink]="[ '/main' ]">Zamknij</a>
+            </ng-template> -->
+        </div>
+    </div>
+</div>

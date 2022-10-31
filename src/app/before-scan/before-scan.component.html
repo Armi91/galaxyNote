@@ -1,0 +1,58 @@
+<div class="container d-flex flex-column justify-content-between min-vh-100">
+    <div class="row">
+        <div class="col-12">
+            <div class="logo">
+                <img src="../../assets/images/samsung.png" alt="">
+            </div>
+        </div>
+        <div class="col-12" *ngIf="pointsScanned != 4">
+            <p class="text-align-center px-2">Kliknij na wybraną ikonkę a następnie udaj się do odpowiedniego miejsca w strefie i zeskanuj kod&nbsp;QR</p>
+        </div>
+        <div class="col-12 d-flex">
+            <div class="icons-wrapper" *ngIf="pointsScanned != 4">
+                <div class="icon-item" [routerLink]="[ '/scanner/design' ]">
+                    <img src="../../assets/images/design-icon.png" alt="Design" class="icon-img">
+                    <span class="icon-description">Design</span>
+                    <span class="is-scanned-bar" [ngClass]="{'active': scan.design}"></span>
+                </div>
+                <div class="icon-item" [routerLink]="[ '/scanner/efficiency' ]">
+                    <img src="../../assets/images/efficiency-icon.png" alt="Wydajność" class="icon-img">
+                    <span class="icon-description">Wydajność</span>
+                    <span class="is-scanned-bar" [ngClass]="{'active': scan.efficiency}"></span>
+                </div>
+                <div class="icon-item" [routerLink]="[ '/scanner/camera' ]">
+                    <img src="../../assets/images/camera-icon.png" alt="Kamera" class="icon-img">
+                    <span class="icon-description">Kamera</span>
+                    <span class="is-scanned-bar" [ngClass]="{'active': scan.camera}"></span>
+                </div>
+                <div class="icon-item" [routerLink]="[ '/scanner/spen' ]">
+                    <img src="../../assets/images/spen-icon.png" alt="S Pen" class="icon-img">
+                    <span class="icon-description">Doodle AR</span>
+                    <span class="is-scanned-bar" [ngClass]="{'active': scan.spen}"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center mt-3 mb-3">
+            <p class="text-align-center">Zeskanowano <span>{{ pointsScanned }}</span>/4</p>
+            <p class="text-align-center" *ngIf="scan.prize">Dziękujemy za wspólną zabawę!</p>
+            <p class="text-align-center" *ngIf="scan.prize">Upominek został odebrany</p>
+            <h3 *ngIf="pointsScanned == 4 && !scan.prize">Gratulacje!</h3>
+            <p class="text-align-center" *ngIf="pointsScanned == 4 && !scan.prize">Zeskanowałeś już wszystkie kody dostępne w strefie Samsung Galaxy Note10. Możesz już odebrać swój upominek.</p>
+            <!-- <a class="button" [routerLink]="[ '/scanner/prize' ]" *ngIf="pointsScanned == 4 && !scan.prize">Zaskanuj kod QR</a> -->
+            <!-- <div class="shops-list" *ngIf="pointsScanned == 4 && !scan.prize">
+                <h4>Punkty sprzedaży:</h4>
+                <ul>
+                    <li>RTV EURO AGD</li>
+                    <li>Orange</li>
+                    <li>Play</li>
+                    <li>Plus</li>
+                    <li>Samsung Brand Store</li>
+                    <li>T-Mobile</li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <img src="../../assets/images/render-before-scan.png" alt="" class="render-img">
+    </div>
+</div>

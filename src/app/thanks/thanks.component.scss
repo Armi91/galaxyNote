@@ -1,0 +1,18 @@
+.scanned {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    p{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+.render-back{
+    max-width: calc(100vw + 15px);
+    right: -15px;
+    position: relative;
+}
